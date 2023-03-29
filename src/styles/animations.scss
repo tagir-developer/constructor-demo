@@ -1,0 +1,19 @@
+.animation-drop-down {
+  &-enter {
+    transform: translateY(-100%);
+  }
+
+  &-enter-active {
+    transform: translateY(0%);
+    transition: transform 100ms;
+  }
+
+  &-exit {
+    transform: translateY(0%);
+  }
+
+  &-exit-active {
+    transform: translateY(-100%);
+    transition: transform 100ms;
+  }
+}

@@ -1,0 +1,59 @@
+@import 'styles/variables.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  right: 0;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  background: var(--color-bg-base);
+  box-shadow: 0px 6px 9px -5px rgba(34, 60, 80, 0.16);
+
+  z-index: 1100;
+
+  padding: 0 20px;
+
+  .main-settings-btn {
+    margin-left: auto;
+  }
+
+  .add-elem-drawer {
+  }
+}
+
+.dropdown-menu-item {
+  min-width: 150px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+
+  gap: 10px;
+}
+
+.tabs {
+  $offset: 20px;
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: var(--add-elem-top-bar-height);
+
+    padding: 0px $offset;
+  }
+
+  .close-button {
+    margin: 0 $offset;
+  }
+}

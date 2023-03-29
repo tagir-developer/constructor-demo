@@ -1,0 +1,139 @@
+$ruler-unit: 1px;
+
+$ruler1-bdw: 1px;
+$ruler1-c: #bbb;
+$ruler1-h: 8px;
+$ruler1-space: 5;
+
+$ruler2-bdw: 1px;
+$ruler2-c: #bbb;
+$ruler2-h: 20px;
+$ruler2-space: 50;
+
+.bar {
+  width: 100%;
+  // height: 25px;
+
+  position: relative;
+
+  display: flex;
+
+  // overflow: hidden;
+
+  // z-index: 10;
+
+  background: #ffffff;
+  // box-shadow: 0px -1px 14px 0px rgba(47, 67, 81, 0.2);
+  background-image: linear-gradient(
+      90deg,
+      $ruler1-c 0 $ruler1-bdw,
+      transparent 0
+    ),
+    linear-gradient(90deg, $ruler2-c 0 $ruler2-bdw, transparent 0);
+  background-position: 0 0;
+  background-repeat: repeat-x, repeat-x;
+  background-size: calc($ruler-unit * $ruler1-space) $ruler1-h,
+    calc($ruler-unit * $ruler2-space) $ruler2-h;
+
+  border-bottom: 1px solid rgb(198, 198, 198);
+
+  .ruler {
+    position: absolute;
+
+    width: calc(100% - 50px);
+    height: $ruler2-h;
+
+    flex: 1;
+    display: flex;
+
+    color: #888;
+    counter-reset: d 0;
+
+    font-size: 10px;
+    line-height: 1;
+
+    list-style: none;
+
+    inset-block-start: 0;
+    inset-inline-start: calc($ruler-unit * $ruler2-space);
+
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    li {
+      flex: 0 0 calc($ruler-unit * $ruler2-space);
+      align-self: flex-end;
+
+      counter-increment: d $ruler2-space;
+
+      &:after {
+        content: counter(d) '';
+
+        line-height: 1;
+
+        padding-inline-start: 0.75ch;
+      }
+    }
+  }
+
+  .breakpoints-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(120, 154, 255);
+
+    overflow: hidden;
+
+    margin-top: $ruler2-h;
+  }
+
+  .add-breakpoint-btn {
+    position: absolute;
+    top: 2px;
+    right: -100px;
+
+    border: 2px solid rgb(0, 102, 255);
+
+    border-radius: 20px;
+
+    padding: 0px 10px;
+
+    color: var(--color-text-primary);
+
+    &:hover {
+      background: rgb(200, 214, 255);
+    }
+  }
+
+  .breakpoint-inner-zone {
+    position: absolute;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    border-radius: 3px;
+
+    margin: 0 auto;
+
+    .breakpoint-value {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .delete-breakpoint-btn {
+      width: 30px;
+      color: #fff;
+
+      cursor: pointer;
+    }
+  }
+}

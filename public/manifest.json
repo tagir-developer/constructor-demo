@@ -1,0 +1,30 @@
+{
+  "short_name": "WE Pay LK",
+  "name": "WE Pay LK",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon48x48.png",
+      "sizes": "512x512 192x192 64x64 32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon220x220.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

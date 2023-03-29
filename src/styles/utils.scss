@@ -1,0 +1,15 @@
+@mixin thinScrollbarStyles {
+  /*chrome + safari*/
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: #e4e5ef;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 17px;
+  }
+
+  /*firefox*/
+  scrollbar-color: #b8b8b8 #e4e5ef;
+}

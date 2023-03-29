@@ -1,0 +1,156 @@
+$corner-size: 8px;
+$corner-offset: calc($corner-size / 2);
+
+$side-size: 14px;
+$side-resize-offset: calc($side-size / 2 * -1);
+
+%corners-common {
+  width: $corner-size;
+  height: $corner-size;
+  position: absolute;
+
+  background: grey;
+
+  z-index: 10;
+}
+
+%top-bottom-side-common {
+  position: absolute;
+  width: 100%;
+  height: $side-size;
+
+  z-index: 9;
+
+  &:hover {
+    cursor: ns-resize;
+  }
+}
+
+%left-right-side-common {
+  position: absolute;
+  width: $side-size;
+  height: 100%;
+
+  z-index: 9;
+
+  &:hover {
+    cursor: ew-resize;
+  }
+}
+
+.main {
+  position: absolute;
+  border: 2px solid #ff5100;
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      border: 2px solid green;
+
+      z-index: 5;
+    }
+
+    .top-left {
+      @extend %corners-common;
+
+      top: -$corner-offset;
+      left: -$corner-offset;
+
+      &:hover {
+        cursor: nw-resize;
+      }
+    }
+
+    .top-right {
+      @extend %corners-common;
+
+      top: -$corner-offset;
+      right: -$corner-offset;
+
+      &:hover {
+        cursor: ne-resize;
+      }
+    }
+
+    .bottom-right {
+      @extend %corners-common;
+
+      bottom: -$corner-offset;
+      right: -$corner-offset;
+
+      &:hover {
+        cursor: se-resize;
+      }
+    }
+
+    .bottom-left {
+      @extend %corners-common;
+
+      bottom: -$corner-offset;
+      left: -$corner-offset;
+
+      &:hover {
+        cursor: sw-resize;
+      }
+    }
+
+    .top-side {
+      @extend %top-bottom-side-common;
+
+      top: $side-resize-offset;
+    }
+
+    .bottom-side {
+      @extend %top-bottom-side-common;
+
+      bottom: $side-resize-offset;
+    }
+
+    .right-side {
+      @extend %left-right-side-common;
+
+      top: 0;
+
+      right: $side-resize-offset;
+    }
+
+    .left-side {
+      @extend %left-right-side-common;
+
+      top: 0;
+
+      left: $side-resize-offset;
+    }
+
+    .size-wrapper {
+      width: 100%;
+      position: absolute;
+      bottom: -40px;
+
+      .size-options {
+        width: 100px;
+        height: 30px;
+
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #161616;
+
+        background: #d3d3d3;
+        border-radius: 5px;
+      }
+    }
+  }
+}

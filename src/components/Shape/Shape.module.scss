@@ -1,0 +1,266 @@
+$corner-size: 8px;
+$corner-offset: calc($corner-size / 2);
+
+$side-size: 14px;
+$side-resize-offset: calc($side-size / 2 * -1);
+
+$rotate-size: 24px;
+$rotate-offset: 4px;
+
+$border-radius-size: 12px;
+$border-radius-offset: 3px;
+
+%corners-common {
+  width: $corner-size;
+  height: $corner-size;
+  position: absolute;
+
+  background: grey;
+}
+
+%top-bottom-side-common {
+  position: absolute;
+  width: 100%;
+  height: $side-size;
+
+  &:hover {
+    cursor: ns-resize;
+  }
+}
+
+%left-right-side-common {
+  position: absolute;
+  width: $side-size;
+  height: 100%;
+
+  &:hover {
+    cursor: ew-resize;
+  }
+}
+
+%rotate-common {
+  width: $rotate-size;
+  height: $rotate-size;
+  position: absolute;
+}
+
+%border-radius-common {
+  width: $border-radius-size;
+  height: $border-radius-size;
+  position: absolute;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+  border: 1px solid #4e4e4e;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid green;
+  }
+
+  .top-left {
+    @extend %corners-common;
+
+    top: -$corner-offset;
+    left: -$corner-offset;
+
+    &:hover {
+      cursor: nw-resize;
+    }
+  }
+
+  .top-right {
+    @extend %corners-common;
+
+    top: -$corner-offset;
+    right: -$corner-offset;
+
+    &:hover {
+      cursor: ne-resize;
+    }
+  }
+
+  .bottom-right {
+    @extend %corners-common;
+
+    bottom: -$corner-offset;
+    right: -$corner-offset;
+
+    &:hover {
+      cursor: se-resize;
+    }
+  }
+
+  .bottom-left {
+    @extend %corners-common;
+
+    bottom: -$corner-offset;
+    left: -$corner-offset;
+
+    &:hover {
+      cursor: sw-resize;
+    }
+  }
+
+  .top-side {
+    @extend %top-bottom-side-common;
+
+    top: $side-resize-offset;
+  }
+
+  .bottom-side {
+    @extend %top-bottom-side-common;
+
+    bottom: $side-resize-offset;
+  }
+
+  .right-side {
+    @extend %left-right-side-common;
+
+    top: 0;
+
+    right: $side-resize-offset;
+  }
+
+  .left-side {
+    @extend %left-right-side-common;
+
+    top: 0;
+
+    left: $side-resize-offset;
+  }
+
+  .rotate {
+    $offset: calc($rotate-size * -1 - $rotate-offset);
+
+    &-top-left {
+      @extend %rotate-common;
+
+      top: $offset;
+      left: $offset;
+
+      &:hover {
+        cursor: url('../../images/cursors/rotate-top-left.png') 4 1, pointer;
+      }
+    }
+
+    &-top-right {
+      @extend %rotate-common;
+
+      top: $offset;
+      right: $offset;
+
+      &:hover {
+        cursor: url('../../images/cursors/rotate-top-right.png') 4 1, pointer;
+      }
+    }
+
+    &-bottom-right {
+      @extend %rotate-common;
+
+      bottom: $offset;
+      right: $offset;
+
+      &:hover {
+        cursor: url('../../images/cursors/rotate-bottom-right.png') 4 1, pointer;
+      }
+    }
+
+    &-bottom-left {
+      @extend %rotate-common;
+
+      bottom: $offset;
+      left: $offset;
+
+      &:hover {
+        cursor: url('../../images/cursors/rotate-bottom-left.png') 4 1, pointer;
+      }
+    }
+  }
+
+  .border-radius {
+    $offset: calc($border-radius-size + $border-radius-offset);
+
+    &-top-left {
+      @extend %border-radius-common;
+
+      top: $offset;
+      left: $offset;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    &-top-right {
+      @extend %border-radius-common;
+
+      top: $offset;
+      right: $offset;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    &-bottom-right {
+      @extend %border-radius-common;
+
+      bottom: $offset;
+      right: $offset;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    &-bottom-left {
+      @extend %border-radius-common;
+
+      bottom: $offset;
+      left: $offset;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+
+  .size-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+
+    .size-options {
+      width: 100px;
+      height: 30px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #161616;
+
+      background: #d3d3d3;
+      border-radius: 5px;
+    }
+  }
+}

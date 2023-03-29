@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "react-app"
+  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+        ],
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+            "classes": true,
+            "variables": true,
+            "typedefs": true
+          }
+        ],
+        "no-unused-vars": [
+          "off",
+          { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+        ]
+      }
+    }
+  ]
+}

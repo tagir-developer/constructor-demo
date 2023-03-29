@@ -1,0 +1,19 @@
+@import 'styles/variables.scss';
+
+.tabs {
+  $offset: 20px;
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: var(--add-elem-top-bar-height);
+
+    padding: 0px $offset;
+  }
+
+  .close-button {
+    margin: 0 $offset;
+  }
+}

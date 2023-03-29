@@ -1,0 +1,70 @@
+@import 'styles/variables.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  background: var(--color-bg-container);
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  color: var(--color-text-secondary);
+  font-weight: 500;
+
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    color: var(--color-primary);
+
+    transform: scale(1.1);
+  }
+}
+
+.selected {
+  border: 5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.big {
+  width: 190px;
+  height: 190px;
+
+  font-size: 100px;
+
+  .title {
+    font-size: 18px;
+  }
+}
+
+.middle {
+  width: 120px;
+  height: 120px;
+
+  font-size: 50px;
+
+  gap: 5px;
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+.small {
+  width: 70px;
+  height: 70px;
+
+  font-size: 30px;
+
+  gap: 5px;
+
+  border-radius: 6px;
+
+  .title {
+    font-size: 12px;
+  }
+}

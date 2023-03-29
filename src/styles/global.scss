@@ -1,0 +1,114 @@
+@import '~normalize.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+@import 'styles/animations.scss';
+
+@import 'styles/utils.scss';
+
+@import 'styles/variables.scss';
+
+@import 'assets/fonts/app-icon-font/style.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 4000px;
+
+  font-family: var(--main-font), var(--secondary-font);
+  // font-size: var(--font-size);
+  line-height: normal;
+
+  user-select: none;
+
+  // *[class*='ant'] {
+  //   font-size: inherit;
+  // }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  outline: none;
+}
+
+.selection-area {
+  position: absolute;
+  z-index: 5104;
+  border: 2px dashed #00ab00;
+  background: rgba(0, 109, 7, 0.2);
+  box-sizing: border-box;
+}
+
+.ant-btn > .custom-icon + span {
+  margin-inline-start: 8px;
+}
+
+.ant-drawer .ant-drawer-body {
+  @include thinScrollbarStyles;
+
+  padding: 10px;
+}
+
+.top-bar-drawer.ant-drawer {
+  z-index: 2100;
+
+  .ant-drawer-header-title {
+    flex-direction: row-reverse;
+  }
+
+  .ant-drawer-body {
+    padding: 0px;
+  }
+
+  .ant-tabs-top > .ant-tabs-nav {
+    margin-bottom: 0px;
+  }
+
+  .ant-tabs-nav {
+    height: var(--add-elem-top-bar-height);
+  }
+}
+
+.test-picker-wrapper {
+  [class*='saturation-white']:last-child:last-child div:last-child {
+    // width: 400px !important;
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  div[class*='flexbox-fix']:first-of-type {
+    height: 80px !important;
+  }
+
+  div[class*='flexbox-fix']:first-child {
+    padding: 10px !important;
+  }
+
+  div[class*='flexbox-fix']:first-of-type div:first-child div:first-child {
+    height: 20px !important;
+    border-radius: 4px;
+  }
+}

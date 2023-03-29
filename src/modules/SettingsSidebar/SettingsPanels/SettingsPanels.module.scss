@@ -1,0 +1,15 @@
+@import 'styles/utils.scss';
+
+.settings-button {
+  position: fixed;
+  top: 90px;
+  right: 40px;
+
+  z-index: 1;
+}
+
+.drawer {
+  [class*='ant-drawer'] [class*='ant-drawer-body'] {
+    padding: 0px;
+  }
+}

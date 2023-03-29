@@ -1,0 +1,93 @@
+.scroll-container {
+  position: relative;
+
+  .canvas {
+    // min-height: 300vh;
+    // width: 200vw;
+
+    // TODO: рабочее значение
+    // min-height: 2500px;
+    min-width: 4000px;
+
+    box-sizing: border-box;
+
+    background: #e5e5e5;
+
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+
+    padding: 500px;
+  }
+}
+
+.artboard {
+  // position: relative;
+  position: absolute;
+  // top: 1500px;
+  // left: 1500px;
+
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #fbfbfb;
+
+  .relative-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    flex: 1;
+    box-sizing: border-box;
+
+    .content {
+      position: relative;
+      max-width: 1200px;
+      height: 100%;
+
+      background: #ffffff;
+
+      border-left: 1px solid #dbdbdb;
+      border-right: 1px solid #dbdbdb;
+
+      margin: 0 auto;
+    }
+  }
+
+  .screen-resize-handler {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+
+    box-shadow: 0px -1px 13px 0px #223c5033;
+
+    cursor: ew-resize;
+  }
+
+  .resize-artboard-height-handler {
+    @extend .screen-resize-handler;
+
+    top: inherit;
+    right: inherit;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+
+    cursor: ns-resize;
+  }
+}
